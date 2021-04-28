@@ -137,17 +137,6 @@ Text GLabel 4550 2600 2    50   Input ~ 0
 SDA
 Text Notes 4500 700  0    50   ~ 0
 Derived from o.a.:\nhttps://cdn.sparkfun.com/assets/6/d/c/6/c/ESP32_Thing_Plus_Schematic.pdf
-$Comp
-L Connector_Generic:Conn_02x10_Odd_Even J3
-U 1 1 60751C41
-P 9750 4800
-F 0 "J3" H 9800 4175 50  0000 C CNN
-F 1 "Conn_02x10_Counter_Clockwise" H 9750 4050 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x10_P2.54mm_Vertical" H 9750 4800 50  0001 C CNN
-F 3 "~" H 9750 4800 50  0001 C CNN
-	1    9750 4800
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	7450 4050 7650 4050
 Wire Wire Line
@@ -230,17 +219,6 @@ Wire Wire Line
 	3600 4750 3400 4750
 Wire Wire Line
 	3400 4350 3600 4350
-$Comp
-L power:+5V #PWR012
-U 1 1 6083A583
-P 6950 3150
-F 0 "#PWR012" H 6950 3000 50  0001 C CNN
-F 1 "+5V" H 6965 3323 50  0000 C CNN
-F 2 "" H 6950 3150 50  0001 C CNN
-F 3 "" H 6950 3150 50  0001 C CNN
-	1    6950 3150
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:+5V #PWR015
 U 1 1 6083ABF1
@@ -768,14 +746,6 @@ Wire Wire Line
 	6250 4150 6450 4150
 Wire Wire Line
 	6000 3350 6250 3350
-Wire Wire Line
-	6250 3350 6950 3350
-Wire Wire Line
-	6950 3350 6950 3850
-Connection ~ 6250 3350
-Wire Wire Line
-	6950 3350 6950 3150
-Connection ~ 6950 3350
 $Comp
 L Connector_Generic:Conn_01x08 J6
 U 1 1 60A74126
@@ -874,25 +844,14 @@ IO14
 Text GLabel 8250 4050 0    50   Input ~ 0
 IO16
 $Comp
-L Connector_Generic:Conn_02x03_Odd_Even J9
+L Connector_Generic:Conn_02x02_Odd_Even J9
 U 1 1 60B8EC0E
 P 10650 4100
 F 0 "J9" H 10700 4450 50  0000 C CNN
-F 1 "Conn_02x03" H 10700 4350 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 10650 4100 50  0001 C CNN
+F 1 "Conn_02x02" H 10700 4350 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical" H 10650 4100 50  0001 C CNN
 F 3 "~" H 10650 4100 50  0001 C CNN
 	1    10650 4100
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR07
-U 1 1 60B8FFB1
-P 10150 3800
-F 0 "#PWR07" H 10150 3650 50  0001 C CNN
-F 1 "+5V" H 10165 3973 50  0000 C CNN
-F 2 "" H 10150 3800 50  0001 C CNN
-F 3 "" H 10150 3800 50  0001 C CNN
-	1    10150 3800
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -910,10 +869,6 @@ Wire Wire Line
 	11050 4400 11050 4200
 Wire Wire Line
 	11050 4200 10850 4200
-Wire Wire Line
-	10350 4000 10150 4000
-Wire Wire Line
-	10150 4000 10150 3800
 Text Notes 7650 3500 0    50   ~ 0
 IO Expander goes to one of the switch legs (J5 and J6)\nSteady 5V goes to second switch leg (J9)\nSwitch center contact goes back to board (J7 and J8) \nSwitch center contact goes thru resistor to led.\nLed follows on state. Extra J9 provides ground for leds
 $Comp
@@ -950,23 +905,64 @@ F 3 "~" H 8650 4800 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	10150 4000 10150 4100
-Wire Wire Line
 	10150 4100 10350 4100
-Connection ~ 10150 4000
 Wire Wire Line
 	10350 4200 10150 4200
 Wire Wire Line
 	10150 4200 10150 4100
 Connection ~ 10150 4100
-Wire Wire Line
-	10850 4000 11050 4000
-Wire Wire Line
-	11050 4000 11050 4100
 Connection ~ 11050 4200
 Wire Wire Line
 	10850 4100 11050 4100
-Connection ~ 11050 4100
 Wire Wire Line
 	11050 4100 11050 4200
+$Comp
+L Connector_Generic:Conn_02x10_Odd_Even J3
+U 1 1 60751C41
+P 9750 4800
+F 0 "J3" H 9800 4175 50  0000 C CNN
+F 1 "Conn_02x10_Counter_Clockwise" H 9750 4050 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x10_P2.54mm_Vertical" H 9750 4800 50  0001 C CNN
+F 3 "~" H 9750 4800 50  0001 C CNN
+	1    9750 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 3150 6950 3350
+$Comp
+L power:+3V3 #PWR0101
+U 1 1 6096CF51
+P 6950 3150
+F 0 "#PWR0101" H 6950 3000 50  0001 C CNN
+F 1 "+3V3" H 6965 3323 50  0000 C CNN
+F 2 "" H 6950 3150 50  0001 C CNN
+F 3 "" H 6950 3150 50  0001 C CNN
+	1    6950 3150
+	1    0    0    -1  
+$EndComp
+Text Notes 5850 2950 0    50   ~ 0
+I2C pull ups to \n3V3, or else ESP12 \nmight be damaged
+Text Notes 9850 6800 0    50   ~ 0
+mcp23017
+Text Notes 6050 1400 0    50   ~ 0
+https://electronics.stackexchange.com/questions/340423/pcf8575-woes-driving-a-uln2803\n
+Wire Wire Line
+	6250 3350 6950 3350
+Connection ~ 6250 3350
+Connection ~ 6950 3350
+Wire Wire Line
+	6950 3350 6950 3850
+$Comp
+L power:+3V3 #PWR0102
+U 1 1 608AE359
+P 10150 3800
+F 0 "#PWR0102" H 10150 3650 50  0001 C CNN
+F 1 "+3V3" H 10165 3973 50  0000 C CNN
+F 2 "" H 10150 3800 50  0001 C CNN
+F 3 "" H 10150 3800 50  0001 C CNN
+	1    10150 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10150 3800 10150 4100
 $EndSCHEMATC
